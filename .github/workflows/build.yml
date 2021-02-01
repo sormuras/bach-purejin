@@ -21,7 +21,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: 'Build with Bach'
-        uses: sormuras/bach-build@main
+        run: java --module-path .bach/cache --module com.github.sormuras.bach build
       - name: 'Upload modules'
         uses: actions/upload-artifact@v2
         with:
